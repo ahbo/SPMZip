@@ -1,15 +1,15 @@
 //
-//  ZipTests.swift
-//  ZipTests
+//  SPMZipTests.swift
+//  SPMZipTests
 //
 //  Created by Roy Marmelstein on 13/12/2015.
 //  Copyright © 2015 Roy Marmelstein. All rights reserved.
 //
 
 import XCTest
-@testable import Zip
+@testable import SPMZip
 
-class ZipTests: XCTestCase {
+class SPMZipTests: XCTestCase {
 
     #if os(Linux)
     private let tearDownBlocksQueue = DispatchQueue(label: "XCTest.XCTestCase.tearDownBlocks.lock")
@@ -33,7 +33,7 @@ class ZipTests: XCTestCase {
 
     private func url(forResource resource: String, withExtension ext: String? = nil) -> URL? {
         #if Xcode
-        return Bundle(for: ZipTests.self).url(forResource: resource, withExtension: ext)
+        return Bundle(for: SPMZipTests.self).url(forResource: resource, withExtension: ext)
         #else
         let testDirPath = URL(fileURLWithPath: String(#file)).deletingLastPathComponent()
         let resourcePath = testDirPath.appendingPathComponent("Resources").appendingPathComponent(resource)

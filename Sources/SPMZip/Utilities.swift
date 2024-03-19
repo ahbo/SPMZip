@@ -1,5 +1,5 @@
 //
-//  ZipUtilities.swift
+//  Utilities.swift
 //  Zip
 //
 //  Created by Roy Marmelstein on 26/01/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal class ZipUtilities {
+internal class Utilities {
     
     /*
      Include root directory.
