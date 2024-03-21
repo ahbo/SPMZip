@@ -300,7 +300,7 @@ public class Zip {
         let destinationPath = zipFilePath.path
         
         // Process zip paths
-        let processedPaths = ZipUtilities().processZipPaths(paths)
+        let processedPaths = Utilities().processZipPaths(paths)
         
         // Zip set up
         let chunkSize: Int = 16384

@@ -3,28 +3,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "Zip",
+    name: "SPMZip",
     products: [
-        .library(name: "Zip", targets: ["Zip"])
+        .library(
+            name: "SPMZip",
+            targets: ["SPMZip"])
     ],
     targets: [
         .systemLibrary(
             name: "CZlib",
-            path: "Zip/zlib",
+            path: "Sources/SPMZip/zlib",
             pkgConfig: "zlib"),
         .target(
             name: "Minizip",
             dependencies: ["CZlib"],
-            path: "Zip/minizip",
+            path: "Sources/SPMZip/minizip",
             exclude: ["module"]),
         .target(
-            name: "Zip",
+            name: "SPMZip",
             dependencies: ["Minizip"],
-            path: "Zip",
+            path: "Sources/SPMZip",
             exclude: ["minizip", "zlib"]),
         .testTarget(
-            name: "ZipTests",
-            dependencies: ["Zip"],
-            path: "ZipTests"),
+            name: "SPMZipTests",
+            dependencies: ["SPMZip"],
+            path: "Tests/SPMZipTests"),
     ]
 )
